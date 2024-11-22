@@ -18,6 +18,7 @@ await Awaiter(5000)
 ```
 
 ## waidTillFileLoad
+<b>waidTillFileLoad</b> is use for waiting the file is saved to the storage 
 ```
 import { fileURLToPath } from "url";
 import { waidTillFileLoad } from "./index.js";
@@ -26,8 +27,11 @@ let __dirname=dirname(fileURLToPath(import.meta.url))
 
 await waidTillFileLoad({
     filePath:resolve(__dirname, './readme.md'),
+    //thid the path , where file will be stored
     checkingTime:1000,
+    //check after 1seconds , by default waidTillFileLoad check after every 0.05s seconds
     maxWaitTime:8000,
+    //the max waiting time for the file to be loaded , by default it waits for 10 secods
 });
 
 

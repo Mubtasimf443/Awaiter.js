@@ -21,6 +21,7 @@ export async function waidTillFileLoad(options) {
             let {filePath}=options;
             let waitedTime=0;
             let {checkingTime,maxWaitTime} =options;
+            checkingTime=checkingTime ?checkingTime :50;
             if (typeof checkingTime !== 'number' ) {
                 if (checkingTime.toString()!== 'NaN') {
                     checkingTime=50;
